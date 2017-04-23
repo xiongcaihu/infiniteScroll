@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .infiniteScroll {
+            margin-top: 50px;
+            width: 200px;
+            height: 500px;
+            border: 1px solid;
+            overflow: auto;
+            position:relative;
+        }
+
+        .item {
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 1rem;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+
+        .braceBlock {
+            width: 100%;
+        }
+
+        .itemBoxs{
+            position:absolute;
+            width: 100%;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="infiniteScroll">
+        <div class="itemBoxs" :style="itemBoxsStyle">
+            <div class="item" v-for="(item,index) in nowList" :key="index">{{item.name}}</div>
+        </div>
+        <div class="braceBlock" :style="braceBlockStyle"></div>
+    </div>
+</body>
+<script src="./js/jquery.js"></script>
+<script src="./js/lodash.js"></script>
+<script src="./js/vue.js"></script>
+<script src="./test.js"></script>
+
+</html>
